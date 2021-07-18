@@ -1,0 +1,70 @@
+/* 
+first color :   #08526d 
+secondColor: #ec1c23
+ip 192.168.43.142
+*/
+/* start upper */
+.upper{
+    background-color:#08526d ;
+    color: #fff;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ .upper a i{
+    color: #fff;
+}
+.get-qoute{
+    display: inline-block;
+    border: 1px solid #ec1c23;
+}
+/* End upper */
+
+/* Start navcbar */
+
+.navbar-light .navbar-nav .active > .nav-link 
+{
+    color:#ec1c23 !important;
+    font-weight: 500 !important;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(0,0,0,.5);
+    text-transform: uppercase;
+    font-size: 14px;
+    color:#08526d !important;
+    font-weight: 300;   
+}
+.navbar-brand{
+    font-size: 25px;
+    margin-right: 15px;
+}
+.navbar-brand span:first-child{
+    color:#08526d;
+    font-weight: bold;
+} 
+.navbar-brand span:last-child{
+color:#ec1c23;
+}
+/* End navbar */
+
+/* Start slider  */
+.slider{
+background: #ddd;
+}
+
+.slider .carousel-item {
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+}
+.slider .c-one{
+    background-image: url('../img/img1.JPG');
+}
+.slider .c-two{
+    background-image: url('../img/img2.JPG');
+}
+.slider .c-three{
+    background-image: url('../img/img1.JPG');
+}
+/* End slider */

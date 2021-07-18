@@ -1,0 +1,18 @@
+.fa-trash{
+color:#f44336;
+}
+.fa-eye{
+    color:#00bcd4;
+}
+.fa-edit{
+    color:#45b849;
+}
+.rounded-circle, .rounded-circle:hover{
+    background:#2196f3;
+    width :40px;
+    height: 40px;
+    font-size: 13px;
+    padding-top: 14px;
+    color:#fff;
+    
+}
