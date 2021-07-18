@@ -8,6 +8,6 @@ class todosController extends Controller
 {
     public function index()
     {
-        return view('/pages/todos');
+        return view('/pages/welcome');
     }
 }

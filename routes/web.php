@@ -13,11 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('/pages/welcome');
-})->name("home");
-
-
 
 Route::get('/details', function () {
     return view('pages/details');
@@ -31,7 +26,7 @@ Route::get('/edit', function () {
     return view('pages/edit');
 });
 
-Route::get('/todos','App\Http\Controllers\todosController@index');
+Route::get('/','App\Http\Controllers\todosController@index');
 
 
 Route::get('/app', 'App\Http\Controllers\MyController@index');
