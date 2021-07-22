@@ -9,4 +9,6 @@ class todo extends Model
 {
     use HasFactory;
     protected $attributes = ['status'  => false];
+    
+    protected $fillable = ['title','desc'];
 }

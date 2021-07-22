@@ -13,13 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','App\Http\Controllers\todosController@index');
-Route::get('edit/{todo}','App\Http\Controllers\todosController@edit');
-Route::post('edit/{todo}','App\Http\Controllers\todosController@update');
-Route::get('destroy/{todo}','App\Http\Controllers\todosController@destroy');
-Route::get('details/{todo}','App\Http\Controllers\todosController@show');
-Route::get('create','App\Http\Controllers\todosController@create');
-Route::post('create','App\Http\Controllers\todosController@store');
+Route::get('/','App\Http\Controllers\ToDosController@index');
+Route::get('edit/{todo}','App\Http\Controllers\ToDosController@edit');
+Route::post('edit/{todo}','App\Http\Controllers\ToDosController@update');
+Route::get('destroy/{todo}','App\Http\Controllers\ToDosController@destroy');
+Route::get('details/{todo}','App\Http\Controllers\ToDosController@show');
+Route::get('create','App\Http\Controllers\ToDosController@create');
+Route::post('create','App\Http\Controllers\ToDosController@store');
+
+Route::post('create','App\Http\Controllers\ToDosController@store');
 
 
 Route::get('app', 'App\Http\Controllers\MyController@index');

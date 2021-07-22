@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\todo;
 use Illuminate\Http\Request;
 
-class todosController extends Controller
+class ToDosController extends Controller
 {
     public function index()
     {
@@ -29,11 +29,14 @@ class todosController extends Controller
             'title' => 'required|min:4',
             'desc' => 'required|max:255'
         ]);
+
         $todo = todo::find($todo);
-        $todo ->name = $request -> input('title');
-        $todo ->desc = $request -> input('desc');
-        $todo -> save();
-        $request -> session()->flash('update','Todo Updated successfully!');
+
+        $todo->name = $request->title;
+        $todo->desc = $request->desc;
+        
+        $todo->save();
+        $request->session()->flash('update','Todo Updated successfully!');
         return redirect('/');
     }
  

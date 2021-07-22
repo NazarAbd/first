@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\todo;
 use Illuminate\Database\Eloquent\Factories\Factory;
+
 class todosFactory extends Factory
 {
     /**
@@ -24,6 +25,6 @@ class todosFactory extends Factory
             'name' => $this->faker->sentence(3),
             'desc' => $this->faker->text(100),
             'status' => false
-               ];
+        ];
     }
 }
