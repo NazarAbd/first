@@ -26,4 +26,6 @@
 <body>
  @yield('content') 
 </body>
+<script src="{{asset('js/jquery.slim.min.js')}}"></script>
+<script src="{{asset('js/costum.js')}}"></script>
 </html>

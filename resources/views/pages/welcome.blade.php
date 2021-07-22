@@ -10,31 +10,51 @@
                         <h3> My Todos List </h3>
                     </div>
                     <div class="card-body">
+
+                      @if(session()->has('success'))
+                      <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{session()->get('success')}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                       
+                      </div>
+
+                      @endif
+
+
+                      @if (session()->has('update'))
+                      <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{session()->get('update')}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                       
+                      </div>
+                      @endif
                         <div class="table-responsive-md table-sm table-hover">
                            <table class="table">
-                            <thead>
-                              <tr>
-                                <th scope="col" style="width:80%;">Name</th>
-                                <th colspan="3"> Operations </th>
-                            </thead>
+                           
                             <tbody>
-                                @for ($i = 0; $i < 10; $i++)
-                                    
-                              <tr class="changes">
-                                <td style="width:80%;"> sbdkasdkjaskjasdbadjkabsdkjb</td>
-                                <td><a href="#"><i class="fa fa-eye"></i></a></td>
-                                <td><a href="#"><i class="fa fa-edit"></i></a></td>
-                                <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                @forelse($todos as $todo)
+
+                              <tr class="">
+                                <td class="pl-2" style="width:80%;"> {{ $todo -> name}}</td>
+                                <td><a href="details/{{$todo -> id }}"><i class="fa fa-eye"></i></a></td>
+                                <td><a href="edit/{{$todo -> id}}"><i class="fa fa-edit"></i></a></td>
+                                <td><a href="destroy/{{$todo -> id }}"><i class="fa fa-trash"></i></a></td>
                               </tr>
-                              @endfor
+                              @empty
+                              
+                                <p> No todos.</p>
+                            
+                              @endforelse
 
                             </tbody>
                           </table>
                           <div>
-
-                          <a href="/create" class="float-right text-center rounded-circle mr-4">
-                               <i class="fa fa-plus"></i>
-                          </a>
+                            <a href="/create" title="Create Todo" class="float-right text-center rounded-circle mr-4" 
+                            ><i  class="fa fa-plus"></i></a>
                           </div>
                         </div>
                     </div>
@@ -43,5 +63,4 @@
             </div>
         </div>
         @endsection
-    </body>
 </html>

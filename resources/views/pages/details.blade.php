@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container text-center">
-    <h3 class="mt-5 text-center"> Name  </h3>
+    <h3 class="mt-5 text-center"> {{$todo -> name}}</h3>
     <div class="row p-4 justify-content-center">
         <div class="col-md-7">
             <div class="card">
@@ -13,9 +13,9 @@
                 </div>
                 <div class="card-body text-left">
                     <span class="float-left" style="max-width: 70%;">  
-                    
+                    {{$todo -> desc}}
                     </span>
-                    <span class="float-right badge mt-auto badge-warning">non-completed </span>
+                    <span class="float-right badge mt-auto badge-warning">{{boolval($todo -> status)? 'Completed' : 'Non Completed'}} </span>
                 </div>
             </div>
         </div>

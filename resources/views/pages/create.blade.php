@@ -9,13 +9,25 @@
                 <h3 class="text-center"> New Todo  </h3>
                 </div>
                 <div class="card-body">
-                    <form action="#" method="POST">
+                  
+                    <form action="/create" method="POST">
                         @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Enter Todo Name" name="title">
+                            @error('title')
+                                <div class="alert alert-danger">
+                                    {{$message}}
+                                </div>
+                            @enderror
+                            <input type="text" class="form-control" placeholder="Enter Todo Name" 
+                            name="title" value="{{old('title')}}">
                         </div>
                         <div class="form-group">
-                        <textarea class="form-control" rows="3" aria-placeholder="Ent" name="desc">
+                            @error('desc')
+                            <div class="alert alert-danger">
+                                {{$message}}
+                            </div>
+                        @enderror
+                        <textarea value="{{old('desc')}}" class="form-control" rows="3" aria-placeholder="Enter Todo Description" name="desc">
 
                         </textarea>
                         </div>
