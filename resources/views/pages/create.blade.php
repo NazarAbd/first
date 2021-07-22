@@ -1,4 +1,4 @@
-@extends('pages.header')
+@extends('layouts.app')
 @section('title','Create Todo')
 @section('content')
 <div class="container text-center">

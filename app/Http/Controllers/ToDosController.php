@@ -9,10 +9,7 @@ class ToDosController extends Controller
 {
     public function index()
     {
-        $todos = \App\Models\todo::all();
-
-        // return view('/pages/welcome')-> with('$todos');
-         return view('/pages/welcome',['todos' => $todos]);
+         return redirect(route('login'));
     }
 
 
@@ -36,8 +33,10 @@ class ToDosController extends Controller
         $todo->desc = $request->desc;
         
         $todo->save();
+      
         $request->session()->flash('update','Todo Updated successfully!');
-        return redirect('/');
+      
+        return redirect(route('home'));
     }
  
     public function show($todo)
@@ -55,6 +54,8 @@ class ToDosController extends Controller
     
     public function store(request $request)
     {
+    
+
         $validated = $request->validate([
             'title' => 'required|min:4',
             'desc' => 'required|max:255'
@@ -62,15 +63,16 @@ class ToDosController extends Controller
         $todo = new todo();
         $todo ->name = $request -> input('title');
         $todo ->desc = $request -> input('desc');
+        $todo ->user_id = auth()->id();
         $todo -> save();
         $request -> session()->flash('success','Todo created successfully!');
-        return redirect('/');
+        return redirect(route('home'));
     }
     public function destroy($todo)
     {
         $todo = todo::find($todo);
         $todo -> delete();
         //   todo::statement('ALTER TABLE todos AUTO_INCREMENT = '.(count(todo::all())+1).';');
-        return redirect('/');
+        return redirect(route('home'));
     }
 }

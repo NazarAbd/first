@@ -1,3 +1,3 @@
-$(document).ready(function(){
-    $('.alert').alert('close');
-});
+// $(document).ready(function(){
+//     $('.alert').alert('close');
+// });

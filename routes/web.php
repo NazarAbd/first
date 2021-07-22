@@ -23,5 +23,8 @@ Route::post('create','App\Http\Controllers\ToDosController@store');
 
 Route::post('create','App\Http\Controllers\ToDosController@store');
 
-
 Route::get('app', 'App\Http\Controllers\MyController@index');
+
+Auth::routes();
+
+Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
