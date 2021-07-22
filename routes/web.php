@@ -13,26 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-// Route::get('/details', function () {
-//     return view('pages/details');
-// });
-
-// Route::get('/create', function () {
-//     return view('pages/create');
-// });
-
-// Route::get('/edit', function () {
-//     return view('pages/edit');
-// });
-
 Route::get('/','App\Http\Controllers\todosController@index');
-Route::get('/edit/{todo}','App\Http\Controllers\todosController@edit');
-Route::post('/edit/{todo}','App\Http\Controllers\todosController@update');
-Route::get('/destroy/{todo}','App\Http\Controllers\todosController@destroy');
-Route::get('/details/{todo}','App\Http\Controllers\todosController@show');
-Route::get('/create','App\Http\Controllers\todosController@create');
-Route::post('/create','App\Http\Controllers\todosController@store');
+Route::get('edit/{todo}','App\Http\Controllers\todosController@edit');
+Route::post('edit/{todo}','App\Http\Controllers\todosController@update');
+Route::get('destroy/{todo}','App\Http\Controllers\todosController@destroy');
+Route::get('details/{todo}','App\Http\Controllers\todosController@show');
+Route::get('create','App\Http\Controllers\todosController@create');
+Route::post('create','App\Http\Controllers\todosController@store');
 
 
-Route::get('/app', 'App\Http\Controllers\MyController@index');
+Route::get('app', 'App\Http\Controllers\MyController@index');
